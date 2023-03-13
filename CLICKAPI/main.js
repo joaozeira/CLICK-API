@@ -41,13 +41,19 @@ const scrollReveal = ScrollReveal({
 })
 
 scrollReveal.reveal(
-  `
+  `#home .info, #home .container,
+  #start .titleHeader, #start .details-button,
+  #integration .titleHeader, #integration ul li , #integration .button,
+  #how .titleHeader, #how .cards, #how .card,
+  #planos .titleHeader, #planos .cards, #planos .card,
+  #more .titleHeader,  #more button, #more .img,
+  footer
   `,
   { interval: 100 }
 ) 
 
 /* Botão voltar para o topo */
-/* const backToTopButton = document.querySelector('.back-to-top')
+const backToTopButton = document.querySelector('.back-to-top')
 
 function backToTop() {
   if (window.scrollY >= 560) {
@@ -55,7 +61,7 @@ function backToTop() {
   } else {
     backToTopButton.classList.remove('show')
   }
-} */
+} 
 
 /* Menu ativo conforme a seção visível na página */
 const sections = document.querySelectorAll('main section[id]')
