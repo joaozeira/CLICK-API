@@ -31,7 +31,6 @@ function changeHeaderWhenScroll() {
   }
 }
 
-
 /* ScrollReveal: Mostrar elementos quando der scroll na página */
 const scrollReveal = ScrollReveal({
   origin: 'top',
@@ -44,7 +43,7 @@ scrollReveal.reveal(
   `#home .info, #home .container,
   #start .titleHeader, #start .details-button,
   #integration .titleHeader, #integration ul li , #integration .button,
-  #how .titleHeader, #how .cards, #how .card,
+  #how .titleHeader, #how .cards,
   #planos .titleHeader, #planos .cards, #planos .card,
   #more .titleHeader,  #more button, #more .img,
   footer

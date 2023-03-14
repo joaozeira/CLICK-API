@@ -332,14 +332,49 @@ nav.show div.icon-close {
   flex-direction: column-reverse;
 }
 
-#home .container .form img{
-  height: 25rem;
-  width: 20rem;
-  position: absolute;
-  z-index: 3;
-  right: 10rem;
-  top: 5rem;
+#home .container {
+  width: 100%;
+  height: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+#home .container .info img{
+  height: 20rem;
+  width: 25rem;
+  
+ 
+  position: absolute;
+}
+
+#home .container .info img:nth-child(2){
+  animation: bounce 2s infinite alternate;
+  -webkit-animation: bounce 2s infinite alternate; 
+}
+
+#home .container .info img:nth-child(3){
+  height: 10rem;
+  width: 10rem;
+
+  top: 50%;
+  animation: bounce 2s infinite alternate;
+  -webkit-animation: bounce 2s infinite alternate; 
+}
+
+
+
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+} 
 
 #home .info {
   height: 40vh;
@@ -374,58 +409,6 @@ nav.show div.icon-close {
   font-size: 1rem;
 }
 
-/* ================ */
-.container {
-  height: 50vh;
-  width: 100%;
-  position: relative;
-}
-
-.form::after {
-  position: absolute;
-  content: "";
-  background-color: #0d3a83;
-  border-radius: 30% 50% 20% 40%;
-  opacity: 0.7;
-  height: 20rem;
-  width: 20rem;
-  margin: auto;
-  top: 7rem;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  animation: transform 20s ease-in-out infinite both alternate,
-    movement_one 40s ease-in-out infinite both;
-}
-
-@keyframes transform {
-  0%,
-  100% {
-    border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
-  }
-  20% {
-    border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
-  }
-  40% {
-    border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
-  }
-  60% {
-    border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
-  }
-  80% {
-    border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
-  }
-}
-@keyframes movement_one {
-  0%,
-  100% {
-    transform: none;
-  }
-  50% {
-    transform: rotateY(10deg) scale(1.2);
-  }
-}
-/* ================ */
 
 /*==== ABOUT ============================ */
 #about .details h2 {
@@ -439,6 +422,11 @@ nav.show div.icon-close {
   color: var(--brand-blue);
 }
 
+#about .side .title p{
+  text-align: center;
+}
+
+
 #about .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -451,7 +439,7 @@ nav.show div.icon-close {
 #about .card {
   background-color: var(--body-color);
 
-  max-width: 20rem;
+  max-width: 18rem;
   width: 100%;
   height: 24rem;
 
@@ -525,6 +513,10 @@ nav.show div.icon-close {
 }
 
 /*==== integration ============================ */
+#integration .sidesIntegration .img{
+  display: none;
+}
+
 #integration .integration .titleHeader h1 {
   font-size: 2.5rem;
 }
@@ -611,7 +603,7 @@ nav.show div.icon-close {
 }
 
 #how .cards .card {
-  width: 20rem;
+  width: 18rem;
   height: 24rem;
 
   display: flex;
@@ -624,17 +616,17 @@ nav.show div.icon-close {
   border: 0.1rem solid #0d3a839d;
 }
 
-#how .cards .card .img {
-  background-color: yellow;
-  height: 7rem;
-  width: 7rem;
+#how .cards .card .img{
+  height: 50%;
 
-  border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
 #how .cards .card .details {
-  margin-top: 3rem;
-  height: 50%cards;
+  margin-top: 1rem;
+  height: 50%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -642,6 +634,7 @@ nav.show div.icon-close {
   text-align: center;
   gap: 1.5rem;
 }
+
 #how .cards .card .details h2 {
   font-size: var(--secondary-title-font);
 }
@@ -963,6 +956,25 @@ footer .links a svg:hover {
     width: min(55rem, 100%);
   }
 
+  /* HOME */ 
+  
+  #home .container .info img{
+    height: 25rem;
+    width: 34rem;    
+  }
+  
+  #home .container .info img:nth-child(3){
+    height: 15rem;
+    width: 15rem;
+    right: 35%;
+    top: 45%;
+    animation: bounce 2s infinite alternate;
+    -webkit-animation: bounce 2s infinite alternate; 
+  }
+  
+ 
+
+
   /* ===== ABOUT ===== */
   #about .cards {
     display: grid;
@@ -1009,6 +1021,7 @@ footer .links a svg:hover {
     width: 25rem;
     top: 4rem;
   }
+
 
   /*==== PLANOS ============================ */
   #planos .cards {
@@ -1119,8 +1132,8 @@ footer .links a svg:hover {
     justify-content: space-between;
   }
 
-  #home .wrapper div:nth-child(2) {
-    width: 50%;
+  #home .wrapper .info {
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -1144,20 +1157,12 @@ footer .links a svg:hover {
     align-items: start;
   }
 
-  .container {
+  #home .container {
+    width: 100%;
     height: 100%;
-    width: 50%;
-    position: relative;
-
-    display: grid;
-    place-items: center;
   }
-
-  .form::after {
-    height: 26rem;
-    width: 26rem;
-    top: 10rem;
-  }
+  
+  
   /*==== ABOUT ============================ */
   #about .titleHeader {
     width: 50%;
@@ -1225,7 +1230,7 @@ footer .links a svg:hover {
   }
 
   #about .card:hover {
-    height: 20rem;
+    height: 21rem;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -1280,6 +1285,7 @@ footer .links a svg:hover {
     display: block;
     font-size: 0.8rem;
     text-align: center;
+    line-height: 1rem;
   }
 
   #about .card:hover .details {
@@ -1289,6 +1295,45 @@ footer .links a svg:hover {
   }
 
   /*==== INTEGRATION ============================ */
+  #integration .sidesIntegration{
+    display: flex;
+    height: 100%;
+  }
+  
+  #integration .sidesIntegration .img{
+    display: block;
+    position: relative;
+    width: 50%; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #integration .sidesIntegration .img img{
+   position: absolute;
+   height: 25rem;
+   width: 30rem;
+  }
+
+  #integration .sidesIntegration .img img:nth-child(1){
+    animation: loading 30s linear infinite;
+  }
+
+  #integration .sidesIntegration .img img:nth-child(2){
+    animation: bounce 1s infinite alternate;
+    -webkit-animation: bounce 1s infinite alternate;  
+  }
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
   #integration .integration .titleHeader h1 {
     font-size: var(--title-fontD);
   }
